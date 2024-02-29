@@ -1,0 +1,30 @@
+name: Makefile CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Init/Update submodules
+      run: git submodule update --init
+    
+    - name: Install dependencies
+      run: sudo apt-get install -y pandoc make texlive-xetex texlive-lang-cjk fonts-nanum
+
+    - name: Build PDF
+      run: make
+
+    - name: Uplaod PDF 
+      uses: actions/upload-artifact@v4
+      with:
+        name: C-Study-Guideline.pdf
+        path: main.pdf
