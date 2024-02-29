@@ -33,4 +33,4 @@ ${OUT}: ${TEX_FILES} ${INDEX_FILES}
 .PHONY: clean
 
 clean:
-	rm -rf ${TEX_FILES} ${INDEX_FILES}
+	rm -rf ${TEX_FILES} ${INDEX_FILES} ${OUT}

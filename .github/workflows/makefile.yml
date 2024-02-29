@@ -23,8 +23,11 @@ jobs:
     - name: Build PDF
       run: make
 
+    - name: Change PDF name
+      run: mv main.pdf C-Study-Guideline.pdf
+
     - name: Uplaod PDF 
       uses: actions/upload-artifact@v4
       with:
         name: C-Study-Guideline.pdf
-        path: main.pdf
+        path: C-Study-Guideline.pdf
