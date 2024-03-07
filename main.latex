@@ -5,7 +5,7 @@
 \PassOptionsToPackage{dvipsnames,svgnames,x11names,table}{xcolor}
 
 \usepackage{hyperref, url, xcolor, indentfirst}
-\usepackage{fullpage, fontspec, kotex, listings, graphicx, docmute, float}
+\usepackage{fullpage, fontspec, kotex, listings, graphicx, docmute, float,longtable}
 \usepackage[Export]{adjustbox}
 \adjustboxset*{width=.5\linewidth}
 \setmainhangulfont{NanumMyeongjo}
