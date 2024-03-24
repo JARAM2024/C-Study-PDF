@@ -26,8 +26,17 @@ jobs:
     - name: Change PDF name
       run: mv main.pdf C-Study-Guideline.pdf
 
-    - name: Uplaod PDF 
+    - name: Uplaod PDF as artifact
       uses: actions/upload-artifact@v4
       with:
         name: C-Study-Guideline.pdf
         path: C-Study-Guideline.pdf
+    - name: Upload PDF as release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: C-Study-Guideline.pdf
+        asset_name: C-Study-Guideline.pdf
+        asset_content_type: application/pdf
